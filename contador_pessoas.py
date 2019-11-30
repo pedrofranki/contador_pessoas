@@ -30,6 +30,7 @@ while(cap.isOpened()):
         #cv.imshow('thresh', thresh)
         thresh = cv.dilate(thresh, None, iterations=2)
         contours, hierarchy = cv.findContours(thresh.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+        print(contours)
         for c in contours:
             if cv.contourArea(c) < 1000:
                 continue
